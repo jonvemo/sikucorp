@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny-ps" 
+       viewBox="0 0 1024 1024" 
+       role="img" aria-labelledby="logo__title logo__description">
+    <title id="logo__title">Logo de Siku Corp</title>
+    <desc id="logo__description">Círculo blanco partido en dos, uno más arriba que el otro con una distancia de izquierda a derecha moderada</desc>
+    <style>.s0 {fill: #fff;}</style>
+    <path class="s0" d="m502 384v384c-101.84 0-199.51-40.46-271.53-112.47c-72.01-72.01-112.47-169.69-112.47-271.53c0-101.84 40.46-199.51 112.47-271.53c72.01-72.01 169.69-112.47 271.53-112.47v384z"/>
+    <path class="s0" d="m522 640l0-384c101.84 0 199.52 40.46 271.53 112.47c72.01 72.01 112.47 169.69 112.47 271.53c0 101.84-40.46 199.52-112.47 271.53c-72.01 72.01-169.69 112.47-271.53 112.47l0-384z"/>
+  </svg>

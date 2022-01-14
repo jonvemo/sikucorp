@@ -1,0 +1,38 @@
+{
+    "name": "Siku Corp",
+    "short_name": "Siku",
+    "description": "",
+    "background_color": "#cb6ce6",
+    "theme_color": "#cb6ce6",
+    "orientation": "portrait",
+    "display": "standalone",
+    "start_url": "./",
+    "scope": "./",
+    "lang": "es",
+    "icons": [
+      {
+        "src": "./img/favicon-1024w.png",
+        "type": "image/png",
+        "sizes": "1024x1024",
+        "purpose": "any"
+      },
+      {
+        "src": "./img/favicon-512w.webp",
+        "type": "image/webp",
+        "sizes": "512x512",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "./img/favicon-384w.webp",
+        "type": "image/webp",
+        "sizes": "384x384",
+        "purpose": "any"
+      },
+      {
+        "src": "./img/favicon-256w.webp",
+        "type": "image/webp",
+        "sizes": "256x256",
+        "purpose": "any"
+      }
+    ]
+}
