@@ -2,11 +2,11 @@ const d = document
 
 // Activador de Service Worker, encargado de la PWA (Progressive Web Apps)
 // Comentar este código en caso de modificar elementos hasta haberlos completado, si los cambios no se reflejas elimine los datos de navegación que tenga de la web
-/*if('serviceWorker' in navigator){
+if('serviceWorker' in navigator){
   navigator.serviceWorker.register('./sw.js')
   .then(reg=>console.log('Success',reg))
   .catch(err=>console.warn('Error',err))
-}*/
+}
 
 // Generador de categorías
 const $main = d.querySelector('main')

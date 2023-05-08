@@ -5,6 +5,9 @@ Designer: @rettouseisama
 URL:      https://rettouseisama.blogspot.com/
 Date:     13 Jan 2022
 ----------------------------------------------- */
+/* SVG's */
+/* .s0  {fill: #ffffff;} */
+
 .wrapper {
   display: grid;
   grid-template-columns: 100%;
@@ -18,41 +21,64 @@ Date:     13 Jan 2022
 }
 .header {grid-area: header;} .main {grid-area: main;} .footer {grid-area: footer;}
 
-.header {position: sticky; top: 0; display: flex; justify-content: space-between; align-items: center; min-height: 82px; padding: 16px;}
-
-
+.header {position: sticky; top: 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 82px; padding: 16px; z-index: 1; backdrop-filter: blur(3px);}
+.header__svg {display: flex;}
 .header__nav {display: flex; gap: 16px;}
 .header__link {padding: 8px 24px; border-radius: 25px; transition: all .3s ease;}
-.header__link:is(:hover,:focus) {background-color: #ffff; color: var(--bg);}
+.header__link:is(:hover,:focus) {background-color: #ffff; color: var(--main-bg);}
 
 .header__btn {display: none; padding: 0;}
-.header__btn i {display: grid; place-content: center; height: 50px; width: 50px; font-size: 1.5rem;}
+.header__btn i {display: grid; place-content: center; height: 50px; width: 50px; font-size: 1.2rem;}
 
-.main {display: flex; max-width: 1000px; margin: 0 auto;}
-.main section {display: flex; flex-flow: column wrap; align-items: center; justify-content: center; gap: 16px; padding: 16px;}
+.main {margin: auto 0;}
+.main section {display: flex; flex-flow: column; gap: 16px; max-width: 1000px; margin: 0 auto; padding: 16px;}
+.main .presentation {display: flex; flex-flow: column wrap; align-items: center; justify-content: center; gap: 16px;}
 
 .presentation__description {text-align: center; font-size: 1.2rem;}
 .presentation__footer {font-size: 1rem;}
 .presentation__links {display: flex; flex-flow: row wrap; justify-content: center; gap: 16px;}
-.presentation__links .presentation__link {color: var(--bg);}
+.presentation__links .presentation__link {color: var(--main-bg);}
 .presentation__link {display: flex; align-items: center; gap: 8px; padding: 8px 16px; background-color: #fff; border-radius: 25px;}
 
 /* En caso de añadir más elementos a la clase "aside (.aside)" multiplica "size" por la mitad del número de elementos que tenga para que continúe  
    centrado.
    Ejmeplo: añades un elemento más teniendo entonces 3 de ellos, la siguiente línea "top: calc(50% - (var(--size)*1))" la cambiarías por "top: calc(50% - (var(--size)*1.5))".
 */
-.aside {position: fixed; left: 16px; top: calc(50% - (var(--size)*1)); display: flex; flex-flow: column; align-items: flex-start; gap: 8px;}
-.aside__link:is(:hover,:focus) {background-color: #fff; color: var(--bg);}
+.aside {position: fixed; left: 16px; top: calc(50% - (var(--size)*1)); display: flex; flex-flow: column; align-items: flex-start; gap: 8px; z-index: 1;}
+.aside__link:is(:hover,:focus) {background-color: #fff; color: var(--main-bg);}
 .aside__link {display: flex; align-items: center; justify-content: center; padding: 0 24px 0 0; border-radius: 25px; transition: all .3s ease;}
-.aside__link i {display: grid; place-content: center; width: 3em; height: 3em; background-color: #fff; color: var(--bg); border-radius: 50%;}
+.aside__link i {display: grid; place-content: center; width: 3em; height: 3em; background-color: #fff; color: var(--main-bg); border-radius: 50%;}
 .aside__link:is(:hover,:focus) span {opacity: 1; transform: translateX(0);}
 .aside__link span {opacity: 0; transform: translateX(-50%); transition: all .3s ease;}
 
 .footer {display: flex; padding: 16px;}
 .footer p {font-weight: bold;}
 
-@media screen and (max-width: 576px) {
+.article {padding: 16px; background-color: var(--bg); border-radius: 5px;}
+.article, .command {display: flex; flex-flow: column; gap: 8px;}
+
+.article__title {text-transform: uppercase; position: relative; margin-top: .6rem;}
+.article__title:before {content: 'comandos'; position: absolute; top: -.6rem; font-size: .6rem; color: #f1beff;}
+.article__content {display: flex; flex-flow: column; gap: 8px;}
+
+.command {background-color: var(--main-bg); padding: 8px; border-radius: 5px;}
+.command ::after {position: absolute; top: -.6rem; left: 0; width: max-content; text-transform: uppercase; font-size: .6rem; color: #000;}
+.command >* {position: relative; margin-top: .6rem; font-weight: 300;}
+.command__name:after {content: 'command name';}
+.command__description:after {content: 'description / type';}
+.command__use:after {content: 'how to use';}
+.command__use:before {content: '.'; color: #000;}
+.command__additional:after {content: 'additional';}
+
+.command__name, .command__description:first-letter, .command__additional:first-letter {text-transform: capitalize;}
+.command__use {text-transform: lowercase;}
+/* 576 */
+@media (max-width: 1080px) {.aside {display: none;}}
+@media (max-width: 768px) {
   .header__btn {display: flex;}
-  .header__nav {position: absolute; top: 82px; right: 16px; flex-direction: column; align-items: flex-end; visibility: hidden; opacity: 0; transform: translateX(100%); transition: all .3s ease;}
+  .header__nav {position: absolute; top: 98px; flex-direction: column; align-items: flex-start; visibility: hidden; opacity: 0; transform: translateX(-100%); transition: all .3s ease;}
   .header__nav.active {visibility: visible; opacity: 1; transform: translateX(0);}
+  .header__nav .header__link {background-color: #ffff; color: var(--main-bg);}
+  .header__link:is(:hover,:focus) {text-decoration: underline;}
+  .aside {display: none;}
 }

@@ -7,16 +7,16 @@ const CACHE_NAME="cache_v1",
     "./css/style.css",
     "./js/script.js",
     "./assets/header.html",
+    "./assets/home.html",
     "./assets/economy.html",
     "./assets/music.html",
     "./assets/moderation.html",
     "./assets/footer.html",
     "./assets/include.js",
     "./img/logo.webp",
-    "./img/logo-80w.webp",
-    "./img/favicon-256w.webp",
-    "./img/favicon-512w.webp",
-    "./img/favicon-1024w.png"
+    "./img/favicon-1024w.png",
+    "./img/logo.svg",
+    "./img/large-logo-transparent.svg",
   ]
 self.addEventListener("install", (e) => {
   e.waitUntil(
